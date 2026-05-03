@@ -100,17 +100,7 @@ php artisan migrate --seed
 > php artisan migrate
 > ```
 
-### 9. Build Assets Frontend
-
-```bash
-# Untuk development
-npm run dev
-
-# Untuk production
-npm run build
-```
-
-### 10. Jalankan Aplikasi
+### 9. Jalankan Aplikasi
 
 ```bash
 php artisan serve
