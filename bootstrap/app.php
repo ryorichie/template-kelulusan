@@ -17,7 +17,7 @@ $app = Application::configure(basePath: dirname(__DIR__))
         //
     })->create();
 
-if (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL'])) {
+if (getenv('VERCEL') !== false || isset($_SERVER['VERCEL'])) {
     $app->useStoragePath('/tmp/storage');
     
     // Ensure all required storage directories exist in the Vercel /tmp filesystem
