@@ -14,7 +14,9 @@ $app = Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        $exceptions->reportable(function (\Throwable $e) {
+            file_put_contents('php://stderr', "LARAVEL CRASH: " . $e->getMessage() . "\n" . $e->getTraceAsString() . "\n");
+        });
     })->create();
 
 if (getenv('VERCEL') !== false || isset($_SERVER['VERCEL'])) {
